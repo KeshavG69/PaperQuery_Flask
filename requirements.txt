@@ -40,7 +40,7 @@ exceptiongroup==1.2.2
 executing==2.1.0
 filelock==3.16.1
 filetype==1.2.0
-fitz==0.0.1.dev2
+
 Flask==3.1.0
 Flask-Cors==5.0.0
 flatbuffers==24.3.25
