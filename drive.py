@@ -7,7 +7,7 @@ from datetime import datetime
 from icecream import ic
 
 load_dotenv()
-# get current time
+
 
 
 
@@ -31,6 +31,7 @@ def save_to_google_sheet(user_query, response):
     try:
         # get current time
         now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
         # Prepare the data to save in the sheet
         values = [[user_query, response,now]]
 
