@@ -36,7 +36,7 @@ def chatbot():
         ic(greet_score)
 
         if greet_score.binary_score == "yes":
-            response_text = "I'm sorry, I didn't understand your input. Is there anything I can help you with?"
+            response_text = "Hey! Is there anything I can help you with?"
             save_to_google_sheet(user_message, response_text)
             return Response(response_text, content_type='text/plain')
 
