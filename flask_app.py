@@ -6,8 +6,8 @@ from helper import ask, pdf_text_read, greet_check_chain, answer_chain
 from drive import save_to_google_sheet
 
 # Enable icecream for debugging
-ic.enable()
-# ic.disable()
+# ic.enable()
+ic.disable()
 
 # Flask app setup
 app = Flask(__name__, template_folder='templates', static_folder='static')

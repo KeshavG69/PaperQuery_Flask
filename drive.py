@@ -3,8 +3,14 @@ import json
 from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build
 from dotenv import load_dotenv
+from datetime import datetime
+from icecream import ic
 
 load_dotenv()
+# get current time
+
+
+
 
 service_account_info = json.loads(os.getenv('GOOGLE_APPLICATION_CREDENTIALS_JSON'))
 # The ID of your Google Sheet
@@ -23,8 +29,10 @@ def save_to_google_sheet(user_query, response):
     Save the user_query and response to the Google Sheet.
     """
     try:
+        # get current time
+        now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         # Prepare the data to save in the sheet
-        values = [[user_query, response]]
+        values = [[user_query, response,now]]
 
         # Body for the Sheets API request
         body = {
@@ -40,8 +48,8 @@ def save_to_google_sheet(user_query, response):
             body=body
         ).execute()
 
-        print('Data saved successfully:', result)
+        ic('Data saved successfully:', result)
     except Exception as e:
-        print('Error saving data to Google Sheets:', e)
+        ic('Error saving data to Google Sheets:', e)
 
 
